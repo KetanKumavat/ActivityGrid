@@ -8,12 +8,13 @@ import { EmbedCode } from "@/components/EmbedCode";
 import { useDebounce } from "@/lib/hooks/useDebounce";
 import { HeatmapResponse, PaletteType } from "@/lib/types";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
     const [githubUsername, setGithubUsername] = useState("ketankumavat");
     const [leetcodeUsername, setLeetcodeUsername] = useState("ketankumavat");
     const [palette, setPalette] = useState<PaletteType>("github");
-    const [cellSize, setCellSize] = useState(16);
+    const [cellSize, setCellSize] = useState(15);
     const [showLegend, setShowLegend] = useState(true);
     const [compact, setCompact] = useState(false);
     const [autoResize, setAutoResize] = useState(true);
@@ -139,7 +140,7 @@ export default function Home() {
     return (
         <div className="relative min-h-screen bg-linear-to-br from-zinc-50 via-white to-zinc-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 transition-colors overflow-hidden">
             {/* Globe background */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl aspect-square pointer-events-none opacity-30">
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl aspect-square pointer-events-none opacity-50">
                 <img
                     src="/globe-outline-light.svg"
                     alt=""
@@ -207,6 +208,7 @@ export default function Home() {
                     )}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

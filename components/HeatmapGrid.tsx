@@ -84,7 +84,7 @@ export function HeatmapGrid({
         const start = new Date(fromDate);
         const end = new Date(toDate);
         const today = new Date();
-        today.setHours(0, 0, 0, 0);
+        today.setHours(23, 59, 59, 999); // Set to end of today to include the full day
 
         // Use the earlier of end date or today
         const actualEnd = end > today ? today : end;
@@ -144,7 +144,11 @@ export function HeatmapGrid({
         return { weeks, monthLabels };
     }, [days, fromDate, toDate]);
 
-    const dayLabels = compact ? [] : ["Mon", "Wed", "Fri"];
+    const dayLabels = compact ? [] : [
+        { label: "Mon", index: 1 },
+        { label: "Wed", index: 3 },
+        { label: "Fri", index: 5 },
+    ];
 
     return (
         <TooltipProvider delayDuration={0}>
@@ -152,16 +156,19 @@ export function HeatmapGrid({
                 <div className="flex gap-2">
                     {/* Day labels */}
                     {!compact && (
-                        <div className="flex flex-col justify-around text-xs text-zinc-600 dark:text-zinc-400 pr-2">
-                            {dayLabels.map((label, i) => (
-                                <div
-                                    key={i}
-                                    style={{ height: cellSize }}
-                                    className="flex items-center"
-                                >
-                                    {label}
-                                </div>
-                            ))}
+                        <div className="flex flex-col gap-[3px] text-xs text-zinc-600 dark:text-zinc-400 pr-2">
+                            {[0, 1, 2, 3, 4, 5, 6].map((dayIndex) => {
+                                const labelData = dayLabels.find(d => d.index === dayIndex);
+                                return (
+                                    <div
+                                        key={dayIndex}
+                                        style={{ height: cellSize }}
+                                        className="flex items-center"
+                                    >
+                                        {labelData?.label || ""}
+                                    </div>
+                                );
+                            })}
                         </div>
                     )}
 
