@@ -83,8 +83,11 @@ export default function Home() {
         if (compact) params.set("compact", "1");
         if (autoResize) params.set("autoResize", "1");
 
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 
-            (typeof window !== "undefined" ? window.location.origin : "http://localhost:3000");
+        const baseUrl =
+            process.env.NEXT_PUBLIC_BASE_URL ||
+            (typeof window !== "undefined"
+                ? window.location.origin
+                : "http://localhost:3000");
         return `${baseUrl}/widget?${params.toString()}`;
     }, [
         githubUsername,
@@ -133,8 +136,22 @@ export default function Home() {
     const embedCode = useMemo(() => generateIframeCode(), [generateIframeCode]);
 
     return (
-        <div className="bg-linear-to-br from-zinc-50 via-white to-zinc-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 transition-colors">
-            <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="relative min-h-screen bg-linear-to-br from-zinc-50 via-white to-zinc-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 transition-colors overflow-hidden">
+            {/* Globe background */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl aspect-square pointer-events-none opacity-30">
+                <img
+                    src="/globe-outline-light.svg"
+                    alt=""
+                    className="w-full h-full object-contain dark:hidden"
+                />
+                <img
+                    src="/globe-outline-dark.svg"
+                    alt=""
+                    className="w-full h-full object-contain hidden dark:block"
+                />
+            </div>
+
+            <div className="relative max-w-6xl mx-auto px-4 py-8">
                 <div className="mb-8 text-center">
                     <h1 className="text-3xl md:text-4xl font-bold bg-linear-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-100 bg-clip-text text-transparent leading-loose ">
                         Generate Your Activity Heatmap

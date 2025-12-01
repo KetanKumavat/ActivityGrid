@@ -23,11 +23,6 @@ interface HeatmapResponse {
     days: Record<string, HeatmapDay>;
 }
 
-interface GitHubContribution {
-    contributionCount: number;
-    date: string;
-}
-
 interface LeetCodeSubmissionCalendar {
     [timestamp: string]: number;
 }
@@ -182,9 +177,6 @@ async function fetchLeetCodeContributions(
     }
 }
 
-/**
- * Merge GitHub and LeetCode contributions into unified heatmap
- */
 function mergeContributions(
     github: Record<string, number>,
     leetcode: Record<string, number>,
@@ -284,7 +276,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Determine base URL for internal API calls
-    const baseUrl = process.env.SITE_URL || "http://localhost:3000";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
     // Fetch data from both providers in parallel
     const [githubResult, leetcodeResult] = await Promise.all([
