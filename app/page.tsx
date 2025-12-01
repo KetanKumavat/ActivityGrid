@@ -7,6 +7,7 @@ import { HeatmapPreview } from "@/components/HeatmapPreview";
 import { EmbedCode } from "@/components/EmbedCode";
 import { useDebounce } from "@/lib/hooks/useDebounce";
 import { HeatmapResponse, PaletteType } from "@/lib/types";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
@@ -139,26 +140,15 @@ export default function Home() {
 
     return (
         <div className="relative min-h-screen bg-linear-to-br from-zinc-50 via-white to-zinc-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 transition-colors overflow-hidden">
-            {/* Globe background */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-4xl aspect-square pointer-events-none opacity-50">
-                <img
-                    src="/globe-outline-light.svg"
-                    alt=""
-                    className="w-full h-full object-contain dark:hidden"
-                />
-                <img
-                    src="/globe-outline-dark.svg"
-                    alt=""
-                    className="w-full h-full object-contain hidden dark:block"
-                />
-            </div>
+            <BackgroundBeams />
+
             <Navbar />
-            <div className="relative max-w-6xl mx-auto px-4 py-8">
+            <div className="relative max-w-6xl mx-auto px-4 py-8 z-10">
                 <div className="mb-8 text-center">
-                    <h1 className="text-3xl md:text-4xl font-bold bg-linear-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-100 bg-clip-text text-transparent leading-loose ">
+                    <h1 className="text-3xl md:text-5xl font-bold bg-linear-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-100 bg-clip-text text-transparent leading-loose ">
                         Generate Your Activity Heatmap
                     </h1>
-                    <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                    <p className="text-xl md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
                         Create a unified contribution heatmap from GitHub and
                         LeetCode. Customize it, embed it in your portfolio, and
                         and let it show your consistency.

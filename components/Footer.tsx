@@ -8,7 +8,7 @@ export const Footer = memo(function Footer() {
     return (
         <footer className="px-4 pt-8 pb-6 relative">
             <div className="max-w-6xl mx-auto">
-                <div className="bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-md">
+                <div className="bg-white/5 dark:bg-zinc-900/5 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-md">
                     <div className="px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
                         {/* Logo/Brand */}
                         <div className="relative inline-flex items-center px-2">
@@ -44,7 +44,7 @@ export const Footer = memo(function Footer() {
                                 <Link
                                     href="https://ketankumavat.me"
                                     target="_blank"
-                                    className="text-zinc-900 dark:hover:text-zinc-100 transition-colors underline underline-offset-4 decoration-2 font-medium"
+                                    className="text-zinc-900 dark:text-zinc-100 transition-colors underline underline-offset-4 decoration-2 font-medium"
                                 >
                                     Ketan
                                 </Link>

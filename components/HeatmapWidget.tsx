@@ -17,18 +17,6 @@ export interface HeatmapWidgetProps {
     className?: string;
 }
 
-/**
- * React wrapper component for the heatmap widget iframe
- *
- * @example
- * ```tsx
- * <HeatmapWidget
- *   github="octocat"
- *   palette="github"
- *   autoResize
- * />
- * ```
- */
 export function HeatmapWidget({
     github,
     leetcode,

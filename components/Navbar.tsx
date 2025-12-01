@@ -13,7 +13,7 @@ export const Navbar = memo(function Navbar() {
     return (
         <nav className="px-4 pt-6 pb-4 z-50">
             <div className="max-w-6xl mx-auto">
-                <div className="bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-md">
+                <div className="bg-white/5 dark:bg-zinc-900/5 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-md">
                     <div className="px-6 py-4 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <div className="relative inline-flex items-center px-2">
