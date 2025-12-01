@@ -149,6 +149,17 @@
     background: oklch(0.708 0 0);
 }
 
+/* Hide scrollbar utility */
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 /* Selection styles */
 ::selection {
     background-color: var(--foreground);

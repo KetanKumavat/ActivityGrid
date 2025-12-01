@@ -165,7 +165,7 @@ export function HeatmapGrid({
                         </div>
                     )}
 
-                    <div className="flex-1 overflow-x-auto">
+                    <div className="flex-1 overflow-x-auto overflow-y-visible scrollbar-hide">
                         {/* Month labels */}
                         {!compact && (
                             <div
@@ -305,21 +305,33 @@ export function HeatmapGrid({
                         <div className="flex gap-1">
                             <div
                                 className={cn(
-                                    "w-3 h-3 rounded-sm",
+                                    "w-3 h-3 rounded-[2px]",
                                     colors.empty
                                 )}
                             />
                             <div
-                                className={cn("w-3 h-3 rounded-sm", colors[1])}
+                                className={cn(
+                                    "w-3 h-3 rounded-[2px]",
+                                    colors[1]
+                                )}
                             />
                             <div
-                                className={cn("w-3 h-3 rounded-sm", colors[2])}
+                                className={cn(
+                                    "w-3 h-3 rounded-[2px]",
+                                    colors[2]
+                                )}
                             />
                             <div
-                                className={cn("w-3 h-3 rounded-sm", colors[3])}
+                                className={cn(
+                                    "w-3 h-3 rounded-[2px]",
+                                    colors[3]
+                                )}
                             />
                             <div
-                                className={cn("w-3 h-3 rounded-sm", colors[4])}
+                                className={cn(
+                                    "w-3 h-3 rounded-[2px]",
+                                    colors[4]
+                                )}
                             />
                         </div>
                         <span>More</span>
