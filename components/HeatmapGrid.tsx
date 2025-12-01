@@ -144,11 +144,13 @@ export function HeatmapGrid({
         return { weeks, monthLabels };
     }, [days, fromDate, toDate]);
 
-    const dayLabels = compact ? [] : [
-        { label: "Mon", index: 1 },
-        { label: "Wed", index: 3 },
-        { label: "Fri", index: 5 },
-    ];
+    const dayLabels = compact
+        ? []
+        : [
+              { label: "Mon", index: 1 },
+              { label: "Wed", index: 3 },
+              { label: "Fri", index: 5 },
+          ];
 
     return (
         <TooltipProvider delayDuration={0}>
@@ -158,7 +160,9 @@ export function HeatmapGrid({
                     {!compact && (
                         <div className="flex flex-col gap-[3px] text-xs text-zinc-600 dark:text-zinc-400 pr-2">
                             {[0, 1, 2, 3, 4, 5, 6].map((dayIndex) => {
-                                const labelData = dayLabels.find(d => d.index === dayIndex);
+                                const labelData = dayLabels.find(
+                                    (d) => d.index === dayIndex
+                                );
                                 return (
                                     <div
                                         key={dayIndex}
