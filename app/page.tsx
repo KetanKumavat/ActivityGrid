@@ -7,6 +7,7 @@ import { HeatmapPreview } from "@/components/HeatmapPreview";
 import { EmbedCode } from "@/components/EmbedCode";
 import { useDebounce } from "@/lib/hooks/useDebounce";
 import { HeatmapResponse, PaletteType } from "@/lib/types";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
     const [githubUsername, setGithubUsername] = useState("ketankumavat");
@@ -150,7 +151,7 @@ export default function Home() {
                     className="w-full h-full object-contain hidden dark:block"
                 />
             </div>
-
+            <Navbar />
             <div className="relative max-w-6xl mx-auto px-4 py-8">
                 <div className="mb-8 text-center">
                     <h1 className="text-3xl md:text-4xl font-bold bg-linear-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-100 bg-clip-text text-transparent leading-loose ">

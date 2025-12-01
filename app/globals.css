@@ -124,6 +124,7 @@
 /* Custom scrollbar - minimal */
 ::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -131,13 +132,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--muted);
+    background: oklch(0.708 0 0);
     border-radius: 3px;
     transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--foreground);
+    background: oklch(0.556 0 0);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: oklch(0.556 0 0);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.708 0 0);
 }
 
 /* Selection styles */

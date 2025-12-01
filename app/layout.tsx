@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ThemeProviderClient from "@/components/ThemeProvider";
-import { Navbar } from "@/components/Navbar";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,10 +22,7 @@ export default function RootLayout({
             className="transition-colors duration-200"
         >
             <body className={` ${inter.className} antialiased`}>
-                <ThemeProviderClient>
-                    <Navbar />
-                    {children}
-                </ThemeProviderClient>
+                <ThemeProviderClient>{children}</ThemeProviderClient>
             </body>
         </html>
     );

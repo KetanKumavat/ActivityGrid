@@ -244,8 +244,6 @@ export function HeatmapGrid({
                                                             ).toLocaleDateString(
                                                                 "en-US",
                                                                 {
-                                                                    weekday:
-                                                                        "short",
                                                                     month: "short",
                                                                     day: "numeric",
                                                                     year: "numeric",
@@ -256,10 +254,10 @@ export function HeatmapGrid({
                                                             {dayData.github >
                                                                 0 && (
                                                                 <div className="flex items-center gap-2">
-                                                                    <span className="text-neutral-700 dark:text-neutral-600">
+                                                                    <span className="text-neutral-200 dark:text-neutral-600">
                                                                         GitHub:
                                                                     </span>
-                                                                    <span className="font-medium text-neutral-700 dark:text-neutral-700">
+                                                                    <span className="font-medium text-neutral-100 dark:text-neutral-700">
                                                                         {
                                                                             dayData.github
                                                                         }
@@ -269,10 +267,10 @@ export function HeatmapGrid({
                                                             {dayData.leetcode >
                                                                 0 && (
                                                                 <div className="flex items-center gap-2">
-                                                                    <span className="text-neutral-700 dark:text-neutral-600">
+                                                                    <span className="text-neutral-200 dark:text-neutral-600">
                                                                         LeetCode:
                                                                     </span>
-                                                                    <span className="font-medium text-neutral-700 dark:text-neutral-700">
+                                                                    <span className="font-medium text-neutral-100 dark:text-neutral-700">
                                                                         {
                                                                             dayData.leetcode
                                                                         }
@@ -280,10 +278,10 @@ export function HeatmapGrid({
                                                                 </div>
                                                             )}
                                                             <div className="flex items-center gap-2 font-semibold">
-                                                                <span className="text-neutral-700 dark:text-neutral-600">
+                                                                <span className="text-neutral-200 dark:text-neutral-600">
                                                                     Total:
                                                                 </span>
-                                                                <span className="text-neutral-700 dark:text-neutral-700">
+                                                                <span className="text-neutral-100 dark:text-neutral-700">
                                                                     {
                                                                         dayData.total
                                                                     }
