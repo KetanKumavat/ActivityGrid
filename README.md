@@ -40,7 +40,7 @@ GITHUB_TOKEN=your_github_token_here
 
 ```html
 <iframe
-    src="https://your-domain.com/widget?github=octocat&palette=github"
+    src="https://activity-grid.vercel.app/widget?github=ketankumavat&palette=github"
     width="900"
     height="200"
     frameborder="0"
