@@ -35,7 +35,7 @@ export const EmbedCode = memo(function EmbedCode({
                     )}
                 </button>
             </div>
-            <pre className="bg-zinc-50 dark:bg-zinc-950 p-2.5 rounded-lg overflow-x-auto text-[11px] font-mono text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800 text-ellipsis whitespace-pre-wrap">
+            <pre className="bg-zinc-50 dark:bg-zinc-950 p-2.5 rounded-lg overflow-x-hidden text-xs font-mono text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800 text-ellipsis whitespace-pre-wrap">
                 {embedCode}
             </pre>
         </div>
